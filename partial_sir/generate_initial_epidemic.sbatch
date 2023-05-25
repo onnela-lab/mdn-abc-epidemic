@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#SBATCH -c 1
+#SBATCH -p serial_requeue
+#SBATCH -t 0-00:20
+#SBATCH --mem 500M
+
+
+module load Anaconda3/2019.10
+source activate vaccine_abc
+python run_initial_epidemic.py
+source deactivate
+
