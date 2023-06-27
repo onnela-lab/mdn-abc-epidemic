@@ -234,13 +234,13 @@ def is_typical(proposed_output_prevalence, typical_values):
 # pickling things more efficiently.
 ###################
 def compressed_pickle(title, data):
-        with bz2.BZ2File(title + ".pbz2", "w") as f:
-                cPickle.dump(data, f)
+	with bz2.BZ2File(title + ".pbz2", "w") as f:
+	    cPickle.dump(data, f)
 
 # Pickle a file and then compress it into a file with extension
 # Load any compressed pickle file
 def decompress_pickle(file):
-        data = bz2.BZ2File(file, "rb")
-        data = cPickle.load(data)
-        return data
+	data = bz2.BZ2File(file, "rb")
+	data = cPickle.load(data)
+	return data
 
